@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage("Restore project dependencies") {
             steps {
-                bat 'dotnet restore'
+                bat 'dotnet restore SeleniumIde.sln'
             }
         }
         stage("Build the project") {
             steps {
-                bat 'dotnet build --no-restore'
+                bat 'dotnet build SeleniumIde.sln --no-restore'
             }
         }
         stage ("Run tests") {
             steps {
-                bat 'dotnet test --logger "trx;LogFileName=TestResults.trx"'
+                bat 'dotnet test SeleniumIde.sln --logger "trx;LogFileName=TestResults.trx"'
             }
         }
     }
