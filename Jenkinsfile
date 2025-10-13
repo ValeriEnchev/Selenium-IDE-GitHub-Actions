@@ -13,8 +13,14 @@ pipeline {
         }
         stage ("Run tests") {
             steps {
-                bat 'dotnet test'
+                bat 'dotnet test --logger "trx;LogFileName=TestResults.trx'
             }
         }
     }
+	post {
+		always {
+			archiveArtifacts artifacts: '**/TestResults/*.trx', allowEmptyArchive: true
+			junit '**/TestResults/*.trx'
+		}
+	}
 }
