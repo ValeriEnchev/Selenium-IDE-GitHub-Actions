@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        CHROME_VERSION = '127.0.6533.73'
-        CHROMEDRIVER_VERSION = '127.0.655.72'
+        CHROME_VERSION = '141.0.7390.5400'
+        CHROMEDRIVER_VERSION = '141.0.7390.5400'
         CHROME_INSTALL_PATH = '/Applications/Google Chrome.app/Contents/MacOS'
     }
 
