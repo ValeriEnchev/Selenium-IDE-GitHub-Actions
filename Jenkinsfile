@@ -13,7 +13,7 @@ pipeline {
         }
         stage ("Run tests") {
             steps {
-                bat 'dotnet test --logger "trx;LogFileName=TestResults.trx'
+                bat 'dotnet test --logger "trx;LogFileName=TestResults.trx"'
             }
         }
     }
